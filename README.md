@@ -1,8 +1,6 @@
 # System Forensics Project
 
-**Author:** Safa Muhammad Ali  
-**Course:** CSEC 140.602 – System Forensics  
-**Institution:** RIT Dubai  
+**Author:** Safa Muhammad Ali   
 **Date:** 2026  
 
 ---
