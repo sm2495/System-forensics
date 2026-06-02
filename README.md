@@ -99,6 +99,7 @@ This project demonstrates practical system forensics skills through hands-on tas
 
 **Figure 4d:** Verifying module insertion and extracting readable strings.  
 ![Figure 4d](lime_3.png)  
+![Figure 4e](searching.png)
 **Steps:**
 - Confirm module insertion: `lsmod | grep lime`  
 - Extract readable strings:  strings Group6_memory_dump.bin > results.txt
