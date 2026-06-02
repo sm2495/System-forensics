@@ -33,10 +33,10 @@ This project demonstrates practical system forensics skills through hands-on tas
 ![Figure 1a](create_file.png)
 
 **Figure 1b:** Inserting content into `group6_.txt`.  
-![Figure 1b](insert_content.png)
+![Figure 1b](insert_text.png)
 
 **Figure 1c:** Copying `group6_.txt` to `copyfile.txt` using `cp`.  
-![Figure 1c](copy_file.png)
+![Figure 1c](file_copy.png)
 
 **Figure 1d:** Verifying integrity using `md5sum` hashes.  
 ![Figure 1d](hash_compare.png)
