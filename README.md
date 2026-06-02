@@ -72,7 +72,7 @@ This project demonstrates practical system forensics skills through hands-on tas
 **Figure 2b:** Confirming file content has been overwritten.  
 ![Figure 2b](after_deletion.png)  
 **Step-by-step:**
-- Open the file in a hex editor or using `xxd group6_.txt`.  
+- Open the file in a hex editor.  
 - Verify that the file content consists entirely of zeros, indicating the original data has been overwritten and cannot be recovered.
 
 ---
