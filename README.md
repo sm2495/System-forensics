@@ -141,4 +141,3 @@ These figures and steps document key forensic workflows, demonstrating practical
 - Imaging and recovering USB drives.  
 - Detecting potentially malicious USB devices.
 
-This project validates current practical cybersecurity skills and prepares for deeper specialization.
