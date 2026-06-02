@@ -21,7 +21,7 @@ This project demonstrates practical system forensics skills, including:
 
 ### 1. Forensically Copying Files
 **Figure 1a:** Creating a text file `group6_.txt` using `nano`.  
-![Figure 1a](file_copy_cd_dd.png)
+![Figure 1a](create_file.png)
 
 ### 2. Forensic Deletion
 **Figure 2a:** Deleting files using `/dev/zero` and verifying with `xxd`.  
@@ -31,6 +31,7 @@ This project demonstrates practical system forensics skills, including:
 ### 3. RAM / Volatile Memory Analysis
 **Figure 3a:** Dumping RAM using LiME module and searching with `grep`.  
 ![Figure 3a](ram_dump.png)
+![Figure 3b](searching.png)
 
 ### 4. USB Imaging / Windows Forensics
 **Figure 4a:** Creating a USB image using FTK Imager.  
