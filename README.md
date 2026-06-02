@@ -48,13 +48,13 @@ This project demonstrates practical system forensics skills through hands-on tas
 - Command: `cp group6_.txt copyfile.txt`  
 - This is a normal copy and works for general use but may not preserve metadata or guarantee forensic integrity.
 
-**Figure 1c (dd):** Copying with `dd` (forensic copy).  
+**Figure 1d (dd):** Copying with `dd` (forensic copy).  
 ![Figure 1c (dd)](dd_copy.png)  
 **Step-by-step:**
 - Command: `dd if=group6_.txt of=copy.dd`  
 - This performs a **byte-by-byte copy**, preserving the exact file content for forensic purposes.
 
-**Figure 1d:** Verifying integrity using `md5sum`.  
+**Figure 1e:** Verifying integrity using `md5sum`.  
 ![Figure 1d](hash_compare_dd.png)  
 **Step-by-step:**
 - Command: `md5sum group6_.txt copy.dd`  
