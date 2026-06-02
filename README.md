@@ -60,10 +60,11 @@ This project demonstrates practical system forensics skills through hands-on tas
 **Step-by-step:**
 - Use `dd if=/dev/zero of=group6_.txt bs=1M count=1` to overwrite the file.  
 
-**Figure 2b:** Verifying that file cannot be recovered.  
+**Figure 2b:** Confirming file content has been overwritten.  
 ![Figure 2b](after_deletion.png)  
 **Step-by-step:**
-- Use `xxd group6_.txt` to confirm that the original content has been overwritten and cannot be recovered.  
+- Open the file in a hex editor.  
+- Verify that the file content consists entirely of zeros, indicating the original data has been overwritten and cannot be recovered.
 
 ---
 
