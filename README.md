@@ -24,9 +24,9 @@ This project demonstrates practical system forensics skills, including:
 ![Figure 1a](create_file.png)
 
 ### 2. Forensic Deletion
-**Figure 2a:** Deleting files using `/dev/zero` and verifying with `xxd`.  
+**Figure 2a:** Deleting files using `/dev/zero` and verifying that it cannot be recovered.  
 ![Figure 2a](forensic_deletion.png)
-![Figure 2b](binary_check.png)
+![Figure 2b](after_deletion.png)
 
 ### 3. RAM / Volatile Memory Analysis
 **Figure 3a:** Dumping RAM using LiME module and searching with `grep`.  
