@@ -46,19 +46,19 @@ This project demonstrates practical system forensics skills through hands-on tas
 ![Figure 1c](file_copy.png)  
 **Step-by-step:**
 - Command: `cp group6_.txt copyfile.txt`  
-- This is a normal copy and works for general use but may not preserve metadata or guarantee forensic integrity.
+- Normal copy; may not preserve metadata for forensic integrity.
 
-**Figure 1d (dd):** Copying with `dd` (forensic copy).  
+**Figure 1c (dd):** Copying with `dd` (forensic copy).  
 ![Figure 1c (dd)](dd_copy.png)  
 **Step-by-step:**
 - Command: `dd if=group6_.txt of=copy.dd`  
-- This performs a **byte-by-byte copy**, preserving the exact file content for forensic purposes.
+- Creates a byte-by-byte forensic copy, preserving exact file content.
 
-**Figure 1e:** Verifying integrity using `md5sum`.  
+**Figure 1d:** Verifying integrity using `md5sum`.  
 ![Figure 1d](hash_compare_dd.png)  
 **Step-by-step:**
 - Command: `md5sum group6_.txt copy.dd`  
-- Confirm that the hashes match, showing the `dd` copy is **forensically identical** to the original file.
+- Confirm hashes match, showing `dd` copy is forensically identical.
 
 ---
 
@@ -72,49 +72,61 @@ This project demonstrates practical system forensics skills through hands-on tas
 **Figure 2b:** Confirming file content has been overwritten.  
 ![Figure 2b](after_deletion.png)  
 **Step-by-step:**
-- Open the file in a hex editor.  
-- Verify that the file content consists entirely of zeros, indicating the original data has been overwritten and cannot be recovered.
+- Open the file in a hex editor or using `xxd group6_.txt`.  
+- Verify the file consists entirely of zeros, showing original data is unrecoverable.
 
 ---
 
 ### 3. RAM / Volatile Memory Analysis
 
-**Figure 3a:** Dumping RAM using LiME module.  
-![Figure 3a](ram_dump.png)  
+**Figure 4a:** Cloning LiME from GitHub repository.  
+![Figure 4a](lime_1.png)  
 **Step-by-step:**
-- Load LiME module: `insmod lime.ko "path=/tmp/memdump.lime format=lime"`.  
-- Verify that `/tmp/memdump.lime` is created.
+- Run `git clone https://github.com/504ensicsLabs/LiME.git`  
+- This downloads the LiME source code for memory acquisition.
 
-**Figure 3b:** Searching RAM dump with `grep` to find sensitive data.  
-![Figure 3b](searching.png)  
+**Figure 4b:** Listing contents of the `src` directory.  
+![Figure 4b](lime_2.png)  
 **Step-by-step:**
-- Run `grep "password" /tmp/memdump.lime` to locate sensitive content in memory.
+- Navigate to `LiME/src` and list contents with `ls`.  
+- Verify kernel module and source files are present before building.
 
+**Figure 4c:** Inserting the kernel module and creating a RAM dump.  
+![Figure 4c](lime_4.png)  
+**Step-by-step:**
+- Load the module:  sudo insmod /home/safa/Desktop/LiME/src/lime-6.8.0-31-generic.ko "path=/home/safa/Desktop/LiME/src/Group6_memory_dump.bin format=padded"
+  - This generates the memory dump file `Group6_memory_dump.bin`.
+
+**Figure 4d:** Verifying module insertion and extracting readable strings.  
+![Figure 4d](lime_3.png)  
+**Step-by-step:**
+- Confirm module insertion: `lsmod | grep lime`  
+- Extract readable strings:  strings Group6_memory_dump.bin > results.txt
+  
 ---
 
 ### 4. USB Imaging / Windows Forensics
 
-**Figure 4a:** Creating a USB image using FTK Imager.  
-![Figure 4a](usb_ftk_imager.png)  
+**Figure 5a:** Creating a USB image using FTK Imager.  
+![Figure 5a](usb_ftk_imager.png)  
 **Step-by-step:**
-- Open FTK Imager and select the USB drive.  
-- Choose “Create Image” and save as `.E01` or `.RAW`.
+- Open FTK Imager, select USB drive, choose “Create Image”, and save as `.E01` or `.RAW`.
 
-**Figure 4b:** Recovering deleted or hidden files from the USB image.  
-![Figure 4b](recovered.png)  
+**Figure 5b:** Recovering deleted or hidden files from the USB image.  
+![Figure 5b](recovered.png)  
 **Step-by-step:**
-- Mount the image in FTK Imager.  
-- Browse the file system and export deleted or hidden files.
+- Mount image in FTK Imager.  
+- Browse file system and export deleted/hidden files.
 
 ---
 
 ### 5. Detecting Suspicious USB Devices
 
-**Figure 5a:** Listing connected USB devices with USBDeview.  
-![Figure 5a](suspicious_usb_devices.png)  
+**Figure 6a:** Listing connected USB devices with USBDeview.  
+![Figure 6a](suspicious_usb_devices.png)  
 **Step-by-step:**
 - Open USBDeview.  
-- Check all connected devices for unusual Vendor IDs, Product IDs, or suspicious activity.
+- Check connected devices for unusual Vendor IDs, Product IDs, or suspicious activity.
 
 ---
 
