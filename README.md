@@ -67,7 +67,7 @@ This project demonstrates practical system forensics skills through hands-on tas
 **Figure 2a:** Deleting files using `/dev/zero`.  
 ![Figure 2a](forensic_deletion.png)  
 **Steps:**
-- Use `dd if=/dev/zero of=group6_.txt bs=1M count=1` to overwrite the file.  
+- Use `dd if=/dev/zero of=mytext.txt bs=1M count=1` to overwrite the file.  
 
 **Figure 2b:** Confirming file content has been overwritten.  
 ![Figure 2b](after_deletion.png)  
