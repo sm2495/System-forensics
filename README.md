@@ -47,7 +47,7 @@ This project demonstrates practical system forensics skills through hands-on tas
 **Figure 2a:** Deleting files using `/dev/zero`.  
 ![Figure 2a](forensic_deletion.png)
 
-**Figure 2b:** Verifying deletion using binary view with `xxd`.  
+**Figure 2b:** Verifying that file cannot be recovered.  
 ![Figure 2b](after_deletion.png)
 
 ---
@@ -66,7 +66,7 @@ This project demonstrates practical system forensics skills through hands-on tas
 ![Figure 4a](usb_ftk_imager.png)
 
 **Figure 4b:** Recovering deleted or hidden files from the USB image.  
-![Figure 4b](usb_recover.png)
+![Figure 4b](recovered.png)
 
 ---
 
